@@ -1,0 +1,32 @@
+extends ./layaut/layaut
+
+block content
+    main.container.mt-5
+           h1.text-center.mt-5 #{pagina}
+
+           blockquote.text-center Lee sobre nuestros clientes y sus experiencias
+           include ./layaut/bloque_testimoniales  
+
+           .row
+               .col-md-12
+                  h2.d-block.w-100.text-center Agrega un testimonial 
+
+                  if(errores)
+                       each error in errores 
+                            .alert.col.alert-danger.text-center=error.mensaje
+
+               .row.justify-content-center.col 
+                    .col-md-8 
+                         form(action="/testimoniales"  method="POST") 
+                             .form-group
+                                label(for="nombre") Nombre
+                                input#nombre.form-control(type="text" placeholder="Tu nombre" name="nombre" value=nombre)  
+
+                             .form-group
+                                label(for="correo") Correo
+                                input#nombre.form-control(type="correo" placeholder="Tu email" name="correo" value=correo)    
+                             .form-group
+                                label(for="mensaje") Mensaje
+                                textarea#mensaje.form-control(name="mensaje"  placeholder="Tu mensaje"  rows="4" resize="off")= mensaje
+
+                             input(type="submit", value="Enviar", class="btn btn-success btn-block")        

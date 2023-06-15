@@ -8,7 +8,9 @@
 > Ahora debe crear un archivo para las variables de entorno use sus propios parametros 
     _Ejemplo_
   ```
-    USERNAMEDB=_valor aqui_
+     DBNAME= valor aqui
+     USERNAMEDB= valor aqui
+     USERPASSWORDDB= valor aqui
     
   
   

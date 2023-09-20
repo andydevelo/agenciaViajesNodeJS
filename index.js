@@ -5,12 +5,6 @@ import dotenv from 'dotenv'
 const app = express();
 const PORT = 4000;
 
-
-
-
-
-
-
 // usar template engine PUG
 app.set("view engine", "pug");
 
